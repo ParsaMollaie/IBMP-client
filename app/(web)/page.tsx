@@ -1,5 +1,6 @@
 'use client';
 
+import HeroSlider from '@/components/HeroSlider';
 import Menu from '@/components/Menu';
 import MobileBottomNav from '@/components/MobileBottomNav';
 import MobileCategoryMenu from '@/components/MobileCategoryMenu';
@@ -168,6 +169,18 @@ const menuData = [
   },
 ];
 
+const slidesTest = [
+  {
+    image: '/images/slider2.png',
+  },
+  {
+    image: '/images/slider2.png',
+  },
+  {
+    image: '/images/slider2.png',
+  },
+];
+
 export default function Home() {
   const [categoryOpen, setCategoryOpen] = useState(false);
 
@@ -180,6 +193,7 @@ export default function Home() {
         open={categoryOpen}
         onClose={() => setCategoryOpen(false)}
       />
+      <HeroSlider slides={slidesTest} />
     </>
   );
 }
