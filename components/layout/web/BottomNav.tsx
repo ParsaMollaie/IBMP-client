@@ -9,8 +9,6 @@ import Category from "@/components/icons/Category";
 import Home from "@/components/icons/Home";
 import User from "@/components/icons/User";
 import MobileMenuBar from "@/components/layout/web/MobileMenuBar";
-import { menuData } from "@/constants/menubar";
-import { useDisclosure } from "@/hooks/shared/Disclosure";
 import { cn } from "@/lib/utils";
 
 const mobileBottomNav = [
