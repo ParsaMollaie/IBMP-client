@@ -1,10 +1,10 @@
-import * as React from 'react';
-import { Slot } from '@radix-ui/react-slot';
-import { cva, type VariantProps } from 'class-variance-authority';
+import * as React from "react";
+import { Slot } from "@radix-ui/react-slot";
+import { cva, type VariantProps } from "class-variance-authority";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
-type ButtonProps = React.ComponentProps<'button'> &
+type ButtonProps = React.ComponentProps<"button"> &
   VariantProps<typeof buttonVariants> & {
     asChild?: boolean;
   };
@@ -14,64 +14,54 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        contained: '',
-        outline: '',
+        contained: "",
+        outline: "",
       },
       size: {
-        default: 'h-9 px-4 py-2 has-[>svg]:px-3',
-        sm: 'h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5',
-        lg: 'h-10 rounded-md px-6 has-[>svg]:px-4',
-        icon: 'size-9',
+        default: "h-9 px-4 py-2 has-[>svg]:px-3",
+        sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
+        lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
+        icon: "size-9",
       },
       color: {
-        primary: '',
-        secondary: '',
+        primary: "",
+        secondary: "",
       },
     },
 
     defaultVariants: {
-      variant: 'contained',
-      size: 'default',
-      color: 'primary',
+      variant: "contained",
+      size: "default",
+      color: "primary",
     },
 
     compoundVariants: [
       {
-        variant: 'contained',
-        color: 'primary',
-        className:
-          'bg-primary text-primary-foreground shadow-xs hover:bg-primary/90',
+        variant: "contained",
+        color: "primary",
+        className: "bg-primary text-primary-foreground shadow-xs hover:bg-primary/90",
       },
       {
-        variant: 'contained',
-        color: 'secondary',
-        className:
-          'bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/90',
+        variant: "contained",
+        color: "secondary",
+        className: "bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/90",
       },
       {
-        variant: 'outline',
-        color: 'primary',
-        className: 'border border-primary text-primary hover:bg-primary/10',
+        variant: "outline",
+        color: "primary",
+        className: "border border-primary text-primary hover:bg-primary/10",
       },
       {
-        variant: 'outline',
-        color: 'secondary',
-        className:
-          'border border-secondary text-secondary hover:bg-secondary/10',
+        variant: "outline",
+        color: "secondary",
+        className: "border border-secondary text-secondary hover:bg-secondary/10",
       },
     ],
   }
 );
 
-function Button({
-  className,
-  variant,
-  size,
-  color,
-  asChild = false,
-  ...props
-}: ButtonProps) {
-  const Comp = asChild ? Slot : 'button';
+function Button({ className, variant, size, color, asChild = false, ...props }: ButtonProps) {
+  const Comp = asChild ? Slot : "button";
 
   return (
     <Comp
