@@ -1,124 +1,146 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-
-
 html,
 body {
-  width: 100dvw;
-  overflow-x: hidden;
-  background-color: white;
-  color: black;
   scroll-behavior: smooth;
-  font-family: 'IranSansX', sans-serif;
   font-feature-settings: "ss01";
+  height: 100%;
 }
 
-/* Define Iran Sans font faces */
-@font-face {
-  font-family: 'IranSansX';
-  src: url('/fonts/IRANSansX-Thin.woff') format('woff');
-  font-weight: 200;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'IranSansX';
-  src: url('/fonts/IRANSansX-Light.woff') format('woff');
-  font-weight: 300;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: '';
-  src: url('/fonts/IRANSansX-Medium.woff') format('woff');
-  font-weight: 400;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'IranSansX';
-  src: url('/fonts/IRANSansX-Regular.woff') format('woff');
-  font-weight: 500;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'IranSansX';
-  src: url('/fonts/IRANSansX-DemiBold.woff') format('woff');
-  font-weight: 600;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'IranSansX';
-  src: url('/fonts/IRANSansX-Bold.woff') format('woff');
-  font-weight: 700;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'IranSansX';
-  src: url('/fonts/IRANSansX-ExtraBold.woff') format('woff');
-  font-weight: 900;
-  font-display: swap;
-}
-
-
-@theme {
-  --color-text-1: #ffffff;
-  --color-text-2: #8C8C8C;
-  --color-text-3: #737373;
-  --color-text-4: #404040;
-  --color-text-5: #0D0D0D;
-
-  --color-surface-1: #ffffff;
-  --color-surface-2: #FAFAFA;
-  --color-surface-3: #F5F5F5;
-  --color-surface-4: #F1F1F1;
-
-  --color-stroke-1: #F4F4F4;
-  --color-stroke-2: #EAEAEA;
-
-  --color-primary-50: #FDF8F4;
-  --color-primary-100: #F7DAC6;
-  --color-primary-200: #F2C3A4;
-  --color-primary-300: #EDAD82;
-  --color-primary-400: #E89660;
-  --color-primary-500: #E3803E;
-  --color-primary-600: #DE691C;  /* main */
-  --color-primary-700: #BD5918;
-  --color-primary-750: #9B4A14;
-  --color-primary-800: #7A3A0F;
-  --color-primary-850: #592A0B;
+@theme inline {
+  --breakpoint-xs: 26.5rem;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: white;
+  --color-primary-50: #fdf8f4;
+  --color-primary-100: #f7dac6;
+  --color-primary-200: #f2c3a4;
+  --color-primary-300: #edad82;
+  --color-primary-400: #e89660;
+  --color-primary-500: #e3803e;
+  --color-primary-600: #de691c; /* main */
+  --color-primary-700: #bd5918;
+  --color-primary-750: #9b4a14;
+  --color-primary-800: #7a3a0f;
+  --color-primary-850: #592a0b;
   --color-primary-900: #211004;
 
-  --color-secondary-50: #F5F5F6;
-  --color-secondary-100: #CFCFD0;
-  --color-secondary-200: #B2B2B3;
+  --color-secondary: var(--secondary);
+  --color-secondary-50: #f5f5f6;
+  --color-secondary-100: #cfcfd0;
+  --color-secondary-200: #b2b2b3;
   --color-secondary-300: #959597;
-  --color-secondary-400: #78787B;
-  --color-secondary-500: #5B5B5E;
-  --color-secondary-600: #3E3E42; /* main */
-  --color-secondary-700: #353538; 
-  --color-secondary-750: #2B2B2E; 
+  --color-secondary-400: #78787b;
+  --color-secondary-500: #5b5b5e;
+  --color-secondary-600: #3e3e42; /* main */
+  --color-secondary-700: #353538;
+  --color-secondary-750: #2b2b2e;
   --color-secondary-800: #222224;
-  --color-secondary-850: #19191A;
-  --color-secondary-900: #09090A;
+  --color-secondary-850: #19191a;
+  --color-secondary-900: #09090a;
 
-  --color-success-50: #E1F2E9;
+  --color-text-1: #ffffff;
+  --color-text-2: #8c8c8c;
+  --color-text-3: #737373;
+  --color-text-4: #404040;
+  --color-text-5: #0d0d0d;
+
+  --color-surface-1: #ffffff;
+  --color-surface-2: #fafafa;
+  --color-surface-3: #f5f5f5;
+  --color-surface-4: #f1f1f1;
+
+  --color-stroke-1: #f4f4f4;
+  --color-stroke-2: #eaeaea;
+
+  --color-success-50: #e1f2e9;
   --color-success-100: #308258;
 
-  --color-error-50: #FFE3E0;
-  --color-error-100: #BC2A24;
+  --color-error-50: #ffe3e0;
+  --color-error-100: #bc2a24;
 
-  --color-warning-50: #FFF6E8;
-  --color-warning-100: #F3B63D;
+  --color-warning-50: #fff6e8;
+  --color-warning-100: #f3b63d;
 
-  --color-info-50: #E8F3FF;
-  --color-info-100: #2C86EE;
+  --color-info-50: #e8f3ff;
+  --color-info-100: #2c86ee;
 
-
-
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
 }
 
+:root {
+  --radius: 0.65rem;
+  --background: white;
+  --foreground: oklch(0.141 0.005 285.823);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.141 0.005 285.823);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.141 0.005 285.823);
+  --primary: #de691c;
+  --primary-foreground: white;
+  --secondary: #3e3e42;
+  --secondary-foreground: white;
+  --muted: oklch(0.967 0.001 286.375);
+  --muted-foreground: oklch(0.552 0.016 285.938);
+  --accent: oklch(0.967 0.001 286.375);
+  --accent-foreground: oklch(0.21 0.006 285.885);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.92 0.004 286.32);
+  --input: oklch(0.92 0.004 286.32);
+  --ring: #de691c;
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.141 0.005 285.823);
+  --sidebar-primary: #de691c;
+  --sidebar-primary-foreground: oklch(0.969 0.015 12.422);
+  --sidebar-accent: oklch(0.967 0.001 286.375);
+  --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
+  --sidebar-border: oklch(0.92 0.004 286.32);
+  --sidebar-ring: #de691c;
+}
+
+.no-scroll-bar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
